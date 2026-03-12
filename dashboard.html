@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | StudySync</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-color: var(--bg-color);">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                StudySync
+            </a>
+            <div class="nav-links d-none d-md-flex">
+                <a href="dashboard.html" class="nav-link active">Dashboard</a>
+                <a href="search.html" class="nav-link">Resources</a>
+                <a href="upload.html" class="nav-link">Upload</a>
+                <div class="user-profile" style="display: flex; align-items: center; gap: 0.5rem; margin-left: 1rem; cursor: pointer;">
+                    <div style="width: 2.5rem; height: 2.5rem; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">JD</div>
+                </div>
+            </div>
+            <button class="btn btn-outline d-md-none" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container mt-8 mb-8 animate-fade-in">
+            
+            <!-- Welcome Header -->
+            <div class="flex-between mb-8" style="flex-wrap: wrap;">
+                <div>
+                    <h1>Welcome, <span class="gradient-text">John!</span> 👋</h1>
+                    <p class="mt-4" style="font-size: 1.125rem;">Let's find the study material you need for this semester.</p>
+                </div>
+            </div>
+
+            <!-- Quick Selector -->
+            <div class="card p-4 mb-8">
+                <h3 class="mb-4">Quick Resource Finder</h3>
+                <form action="search.html" class="filters-bar" style="box-shadow: none; padding: 0; margin: 0; background: transparent;">
+                    <div style="flex: 1; min-width: 200px;">
+                        <label class="form-label">Department</label>
+                        <select class="form-select" name="dept">
+                            <option value="">Select Department</option>
+                            <option value="CS">Computer Science</option>
+                            <option value="IT">Information Tech</option>
+                            <option value="MECH">Mechanical Eng</option>
+                        </select>
+                    </div>
+                    <div style="flex: 1; min-width: 150px;">
+                        <label class="form-label">Semester</label>
+                        <select class="form-select" name="sem">
+                            <option value="">Select Sem</option>
+                            <option value="1">Semester 1</option>
+                            <option value="2">Semester 2</option>
+                            <option value="3">Semester 3</option>
+                            <option value="4">Semester 4</option>
+                            <option value="5">Semester 5</option>
+                            <option value="6">Semester 6</option>
+                        </select>
+                    </div>
+                    <div style="flex: 1; min-width: 200px;">
+                        <label class="form-label">Subject</label>
+                        <select class="form-select" name="subject">
+                            <option value="">Select Subject</option>
+                            <option value="dsa">Data Structures</option>
+                            <option value="dbms">Database Systems</option>
+                            <option value="os">Operating Systems</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="height: 48px; padding: 0 2rem;">
+                        <i class="fa-solid fa-search"></i> Find Resources
+                    </button>
+                </form>
+            </div>
+
+            <!-- Recommended Section -->
+            <div class="mt-8">
+                <div class="flex-between mb-4">
+                    <h3>Recommended for You (Semester 4 - CS)</h3>
+                    <a href="search.html" style="color: var(--primary); font-weight: 500;">View All <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="grid-cards">
+                    <!-- Card 1 -->
+                    <div class="card">
+                        <span class="card-badge pdf">PDF</span>
+                        <div class="card-img">
+                            <i class="fa-regular fa-file-pdf"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Operating Systems Complete Notes</div>
+                            <div class="card-desc">Comprehensive handwritten notes covering memory management, process scheduling, and deadlocks.</div>
+                            <div class="card-meta">
+                                <span><i class="fa-regular fa-clock"></i> 2 days ago</span>
+                                <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>
+                            </div>
+                            <a href="#" class="btn btn-outline" style="width: 100%;">
+                                <i class="fa-solid fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="card">
+                        <span class="card-badge ppt">PPT</span>
+                        <div class="card-img" style="background: linear-gradient(135deg, #fffbeb, #fef3c7);">
+                            <i class="fa-regular fa-file-powerpoint" style="color: #f59e0b;"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Database Normalization Slides</div>
+                            <div class="card-desc">Clear examples of 1NF, 2NF, 3NF, and BCNF from Professor Smith's lectures.</div>
+                            <div class="card-meta">
+                                <span><i class="fa-regular fa-clock"></i> 1 week ago</span>
+                                <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                            </div>
+                            <a href="#" class="btn btn-outline" style="width: 100%;">
+                                <i class="fa-solid fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="card">
+                        <span class="card-badge doc">DOC</span>
+                        <div class="card-img" style="background: linear-gradient(135deg, #eff6ff, #dbeafe);">
+                            <i class="fa-regular fa-file-word" style="color: #3b82f6;"></i>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">2024 End Sem Past Paper</div>
+                            <div class="card-desc">Previous year question paper for Computer Networks with solution key appended.</div>
+                            <div class="card-meta">
+                                <span><i class="fa-regular fa-clock"></i> 1 month ago</span>
+                                <div class="rating"><i class="fa-solid fa-star"></i> 4.5</div>
+                            </div>
+                            <a href="#" class="btn btn-outline" style="width: 100%;">
+                                <i class="fa-solid fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo justify-center mb-4 text-center mx-auto" style="justify-content: center; width:100%;">
+                <div class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                StudySync
+            </div>
+            <p>&copy; 2026 StudySync Platform. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
