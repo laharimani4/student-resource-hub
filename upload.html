@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Resource | StudySync</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-color: var(--bg-color);">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                StudySync
+            </a>
+            <div class="nav-links d-none d-md-flex">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="search.html" class="nav-link">Resources</a>
+                <a href="upload.html" class="nav-link active">Upload</a>
+                <div class="user-profile" style="display: flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; background: var(--primary); color: white; border-radius: 50%; font-weight: 600; margin-left: 1rem; cursor: pointer;">JD</div>
+            </div>
+            <button class="btn btn-outline d-md-none" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container mt-8 mb-8 animate-fade-in">
+            <div class="upload-wrapper">
+                <div class="text-center mb-8">
+                    <h2>Upload a Resource</h2>
+                    <p class="mt-4">Help your fellow students by sharing your notes, presentations, or past papers.</p>
+                </div>
+
+                <form id="uploadForm">
+                    <div class="form-group">
+                        <label class="form-label" for="resTitle">Resource Title</label>
+                        <input type="text" id="resTitle" class="form-input" placeholder="e.g. Complete Database Management Notes" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="resDesc">Description / Tips</label>
+                        <textarea id="resDesc" class="form-textarea" placeholder="What does this resource cover? Any specific topics or tips?"></textarea>
+                    </div>
+
+                    <div class="flex-between" style="gap: 1rem; margin-bottom: 1.25rem;">
+                        <div style="flex: 1;">
+                            <label class="form-label">Department</label>
+                            <select class="form-select" required>
+                                <option value="">Select Department</option>
+                                <option value="CS">Computer Science</option>
+                                <option value="IT">Information Tech</option>
+                                <option value="EE">Electrical Eng</option>
+                                <option value="MECH">Mechanical Eng</option>
+                            </select>
+                        </div>
+                        <div style="flex: 1;">
+                            <label class="form-label">Semester</label>
+                            <select class="form-select" required>
+                                <option value="">Select Semester</option>
+                                <option value="1">Semester 1</option>
+                                <option value="2">Semester 2</option>
+                                <option value="3">Semester 3</option>
+                                <option value="4">Semester 4</option>
+                                <option value="5">Semester 5</option>
+                                <option value="6">Semester 6</option>
+                                <option value="7">Semester 7</option>
+                                <option value="8">Semester 8</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Subject</label>
+                        <input type="text" class="form-input" placeholder="e.g. Operating Systems" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Resource Type</label>
+                        <select class="form-select" required>
+                            <option value="">Select Type</option>
+                            <option value="notes">Notes (PDF/DOC)</option>
+                            <option value="ppt">Presentation (PPT)</option>
+                            <option value="paper">Past Paper</option>
+                            <option value="book">Textbook PDF</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group mt-8">
+                        <label class="form-label">Upload File / Link</label>
+                        
+                        <!-- Drag and Drop Area -->
+                        <div class="file-drop-area" id="dropZone">
+                            <i class="fa-solid fa-cloud-arrow-up file-icon"></i>
+                            <h3>Drag & Drop your file here</h3>
+                            <p class="mt-4" style="margin-bottom: 1rem;">or</p>
+                            <button type="button" class="btn btn-outline" id="browseBtn">Browse Files</button>
+                            <input type="file" id="fileInput" hidden>
+                            <p id="fileNameDisplay" class="mt-4" style="font-weight: 500; color: var(--primary); display: none;"></p>
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <span style="color: var(--text-muted); font-size: 0.875rem;">Shared drive link instead?</span>
+                        </div>
+                        <input type="url" class="form-input mt-4" placeholder="https://drive.google.com/file/d/.../view">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mt-8" style="width: 100%; font-size: 1.125rem; padding: 1rem;">
+                        <i class="fa-solid fa-upload"></i> Publish Resource
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 StudySync Platform. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
