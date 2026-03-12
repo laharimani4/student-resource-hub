@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Resources | StudySync</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-color: var(--bg-color);">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                StudySync
+            </a>
+            <div class="nav-links d-none d-md-flex">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="search.html" class="nav-link active">Resources</a>
+                <a href="upload.html" class="nav-link">Upload</a>
+                <div class="user-profile" style="display: flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; background: var(--primary); color: white; border-radius: 50%; font-weight: 600; margin-left: 1rem; cursor: pointer;">JD</div>
+            </div>
+            <button class="btn btn-outline d-md-none" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container mt-8 mb-8 animate-fade-in" style="display: flex; gap: 2rem; flex-wrap: wrap;">
+            
+            <!-- Sidebar Filters -->
+            <aside class="sidebar-filters" style="flex: 1; min-width: 250px; max-width: 300px;">
+                <h3 class="mb-4">Filters</h3>
+                
+                <div class="form-group">
+                    <label class="form-label">Search Keyword</label>
+                    <div class="search-container" style="max-width: 100%;">
+                        <i class="fa-solid fa-search search-icon" style="font-size: 1rem; left: 1rem;"></i>
+                        <input type="text" class="form-input" placeholder="Search..." style="padding-left: 2.5rem;">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Resource Type</label>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                            <input type="checkbox" checked> Notes (PDF)
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                            <input type="checkbox" checked> Slides (PPT)
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                            <input type="checkbox"> Textbooks
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                            <input type="checkbox" checked> Past Papers
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <label class="form-label">Department</label>
+                    <select class="form-select">
+                        <option value="">All Departments</option>
+                        <option value="CS" selected>Computer Science</option>
+                        <option value="IT">Information Tech</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Semester</label>
+                    <select class="form-select">
+                        <option value="">All Semesters</option>
+                        <option value="4" selected>Semester 4</option>
+                        <option value="5">Semester 5</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary" style="width: 100%;">Apply Filters</button>
+            </aside>
+
+            <!-- Results Listing -->
+            <div style="flex: 3; min-width: 300px;">
+                <div class="flex-between mb-4">
+                    <h2>Search Results</h2>
+                    <span style="color: var(--text-muted);">Showing 12 results</span>
+                </div>
+
+                <div class="grid-cards">
+                    <!-- Setup placeholders similar to dashboard for results -->
+                    <div class="card">
+                        <span class="card-badge pdf">PDF</span>
+                        <div class="card-img"><i class="fa-regular fa-file-pdf"></i></div>
+                        <div class="card-content">
+                            <div class="card-title">Data Structures Cheat Sheet</div>
+                            <div class="card-desc">Quick revision notes for trees, graphs, and dynamic programming.</div>
+                            <div class="card-meta">
+                                <span><i class="fa-solid fa-user"></i> Alex</span>
+                                <div class="rating"><i class="fa-solid fa-star"></i> 5.0</div>
+                            </div>
+                            <button class="btn btn-primary" style="width: 100%;"><i class="fa-solid fa-download"></i> Download</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <span class="card-badge ppt">PPT</span>
+                        <div class="card-img" style="background: linear-gradient(135deg, #fffbeb, #fef3c7);"><i class="fa-regular fa-file-powerpoint" style="color: #f59e0b;"></i></div>
+                        <div class="card-content">
+                            <div class="card-title">Microprocessors Lecture 4</div>
+                            <div class="card-desc">8085 architecture and instruction set details.</div>
+                            <div class="card-meta">
+                                <span><i class="fa-solid fa-user"></i> Sarah M.</span>
+                                <div class="rating"><i class="fa-solid fa-star"></i> 4.2</div>
+                            </div>
+                            <button class="btn btn-primary" style="width: 100%;"><i class="fa-solid fa-download"></i> Download</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <span class="card-badge doc">DOC</span>
+                        <div class="card-img" style="background: linear-gradient(135deg, #eff6ff, #dbeafe);"><i class="fa-regular fa-file-word" style="color: #3b82f6;"></i></div>
+                        <div class="card-content">
+                            <div class="card-title">DBMS assignment 2 Solution</div>
+                            <div class="card-desc">SQL queries and relational algebra solutions.</div>
+                            <div class="card-meta">
+                                <span><i class="fa-solid fa-user"></i> John D.</span>
+                                <div class="rating"><i class="fa-solid fa-star"></i> 4.5</div>
+                            </div>
+                            <button class="btn btn-primary" style="width: 100%;"><i class="fa-solid fa-download"></i> Download</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex-center mt-8 text-center" style="display: flex; justify-content: center; gap: 0.5rem;">
+                    <button class="btn btn-outline" disabled>Previous</button>
+                    <button class="btn btn-primary" style="padding: 0.5rem 1rem;">1</button>
+                    <button class="btn btn-outline" style="padding: 0.5rem 1rem;">2</button>
+                    <button class="btn btn-outline">Next</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 StudySync Platform. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
